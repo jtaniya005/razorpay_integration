@@ -13,7 +13,10 @@ class Settings(BaseSettings):
     razorpay_key_id: str
     razorpay_key_secret: str
     razorpay_webhook_secret: str
-    cors_origins: Union[List[str], str] = ["http://localhost:5173"]
+    cors_origins: Union[List[str], str] = [
+        "http://localhost:5173",
+        "https://razorpay-integration-mauve.vercel.app",
+    ]
     database_path: str = "orders.db"
 
     @field_validator("cors_origins", mode="before")
